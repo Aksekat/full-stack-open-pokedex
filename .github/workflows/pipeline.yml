@@ -33,6 +33,7 @@ jobs:
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           severity: info
+          description: ""
           text: A new version of Pokedex deployed
           details: to https://full-stack-open-pokedex-308e.onrender.com/ by ${{ github.event.head_commit.author.name }}
       - name: Notify build failure
@@ -41,6 +42,7 @@ jobs:
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           severity: error
+          description: ""
           text: Build failed
           details: "Commit: ${{ github.event.head_commit.url }}\nAuthor: ${{ github.event.head_commit.author.name }}\nMessage: ${{ github.event.head_commit.message }}"
   tag_release:
